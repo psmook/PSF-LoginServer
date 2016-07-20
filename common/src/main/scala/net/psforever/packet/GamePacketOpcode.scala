@@ -339,7 +339,7 @@ object GamePacketOpcode extends Enumeration {
       case DismountVehicleMsg => noDecoder(opcode)
       case UseItemMessage => noDecoder(opcode)
       case MoveItemMessage => noDecoder(opcode)
-      case ChatMsg => noDecoder(opcode)
+      case ChatMsg => game.ChatMsg.decode
       case CharacterNoRecordMessage => noDecoder(opcode)
 
       // OPCODE 20
@@ -347,7 +347,7 @@ object GamePacketOpcode extends Enumeration {
       case UnknownMessage21 => noDecoder(opcode)
       case BindPlayerMessage => noDecoder(opcode)
       case ObjectCreateMessage_Duplicate => noDecoder(opcode)
-      case ObjectCreateMessage => noDecoder(opcode)
+      case ObjectCreateMessage => game.ObjectCreateMessage.decode
       case ObjectDeleteMessage => noDecoder(opcode)
       case PingMsg => noDecoder(opcode)
       case VehicleStateMessage => noDecoder(opcode)
@@ -379,7 +379,7 @@ object GamePacketOpcode extends Enumeration {
       case LoadMapMessage => noDecoder(opcode)
 
       // OPCODE 50
-      case SetCurrentAvatarMessage => noDecoder(opcode)
+      case SetCurrentAvatarMessage => game.SetCurrentAvatarMessage.decode
       case ObjectHeldMessage => noDecoder(opcode)
       case WeaponFireMessage => noDecoder(opcode)
       case AvatarJumpMessage => noDecoder(opcode)
@@ -544,7 +544,7 @@ object GamePacketOpcode extends Enumeration {
       case KeepAliveMessage => game.KeepAliveMessage.decode
       case MapObjectStateBlockMessage => noDecoder(opcode)
       case SnoopMsg => noDecoder(opcode)
-      case PlayerStateMessageUpstream => noDecoder(opcode)
+      case PlayerStateMessageUpstream => game.PlayerStateMessageUpstream.decode
 
       // OPCODE 190
       case PlayerStateShiftMessage => noDecoder(opcode)
